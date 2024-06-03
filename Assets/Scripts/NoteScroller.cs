@@ -9,17 +9,18 @@ public class NoteScroller : MonoBehaviour
 
     public bool hasStarted;
 
-    // Start is called before the first frame update
     void Start()
     {
+        //The beats per minute get divided by 60
+        //This calculates the beats per second (minute/60 = seconds)
+        //This also dictates the speed the notes move
         beatsPerMinute = beatsPerMinute / 60f;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(hasStarted){
-            transform.position -= new Vector3(0f, beatsPerMinute * Time.deltaTime, 0f);
+        if(hasStarted){ //Waits until player has pressed any key
+            transform.position -= new Vector3(0f, beatsPerMinute * Time.deltaTime, 0f); //Moves the notes down at a set rate
         }
 
     }

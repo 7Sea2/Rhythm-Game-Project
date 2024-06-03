@@ -11,21 +11,19 @@ public class KeyController : MonoBehaviour
 
     public KeyCode notePressBind;
 
-    // Start is called before the first frame update
     void Start()
     {
-        keyRenderer = GetComponent<SpriteRenderer>();
+        keyRenderer = GetComponent<SpriteRenderer>(); //We change the spriterenderer in this script
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(notePressBind)){
-            keyRenderer.sprite = pressedSprite;
+        if(Input.GetKeyDown(notePressBind)){ //Detect if player pressed d, f, j or k key
+            keyRenderer.sprite = pressedSprite; //Replace sprite with the pressed sprite (darkened)
         }
 
-        if(Input.GetKeyUp(notePressBind)){
-            keyRenderer.sprite = defaultSprite;
+        if(Input.GetKeyUp(notePressBind)){ //Detect if key is let go
+            keyRenderer.sprite = defaultSprite; //Revert to the default sprite (not darkened)
         }
     }
 }
